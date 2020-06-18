@@ -1,0 +1,13 @@
+__pycache__/
+venv/*
+
+#data folder
+data/*
+
+#pickle files
+*.pkl
+
+# Jupyter notebook
+.ipynb_checkpoints
+
+
