@@ -3,6 +3,42 @@ This module includes NLP-related functions.
 """
 
 import numpy as np
+import pickle
+import os
+
+def save_obj(obj,name):
+    """
+    Save a variable (obj) in file given by name
+
+    Args:
+        obj : variable to save
+        name [string]: filename where to save
+
+    Returns
+        None
+    """
+    os.makedirs(os.path.dirname(name), exist_ok=True)
+    print("Saving object {:s}.pkl...".format(name))
+    with open(name + '.pkl', 'wb') as f:
+        pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
+    print("Done.")
+    return
+
+def load_obj(name):
+    """
+    Load a saved variable in file given by name, and return it
+
+    Args:
+        name [string]: filename where variable is saved
+
+    Returns
+        obj: variable loaded
+    """
+    print("Loading object {:s}.pkl...".format(name))
+    with open(name + '.pkl', 'rb') as f:
+        obj = pickle.load(f)
+        print("Done")
+        return obj
 
 def load_word2vecModel(word2vec_file):
     """
@@ -14,8 +50,7 @@ def load_word2vecModel(word2vec_file):
     Returns:
         w2v_model (dictionary): dictionary with words as keys, and embeddings as values
     """
-    print("Loading word2vec model...")
-    import os
+    print("Loading word2vec model {:s}...".format(word2vec_file))
 
     w2v_model = {}
     with open(word2vec_file) as f:

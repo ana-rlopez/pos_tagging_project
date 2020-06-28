@@ -37,12 +37,18 @@ accuracy: 0.9310929179191589
 
 ### 2. Usage
 
-To run this task, you need to run the main script of the repository, as:
-```bash
-$ .\pos_tagging_project.py
-```
+* For training the model, run: 
 
-The settings of the experiment can be changed in the configuration file (config.ini).
+```bash
+$ ./run_train_postagging.py
+```
+* For testing the model, run:
+ ```bash
+$ ./run_test_postagging.py
+```
+In case you only want to run the test step, without prior training, the repository includes files extracted from the training step (e.g. the trained model), and which are needed during the test step.  
+
+Note : The settings of the task can be changed in the configuration file (config.ini).
 
 ### 3. Pre-requisites
 
