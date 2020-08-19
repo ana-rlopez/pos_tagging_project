@@ -111,8 +111,8 @@ def tag_encoding_dictionary(conllu_file):
     for int_code, tag in enumerate(tag_list):
         tag_dict[tag] = int_code
 
-        tag_dict['EOS'] = int_code+1
-        tag_dict['PAD'] = int_code+2
+    tag_dict['EOS'] = int_code+1
+    tag_dict['PAD'] = int_code+2
 
     return tag_dict
 

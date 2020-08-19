@@ -41,14 +41,14 @@ tag_dict = functions.tag_encoding_dictionary(config.get('data','conllu_train_fil
 
 # Generate random vectors as embeddings for tags 'EOS', 'PAD', and 'OOV'
 # list with elements: [oov_vec, eos_vec, pad_vec]
-sequence_len = config.getint('model','sequence_len')
-extra_embeddings = functions.generate_extra_embedding_vecs(sequence_len)
+extra_embeddings = functions.generate_extra_embedding_vecs(embedding_dim)
 
 #save tag_dict and extra_embedding to use at test time
 functions.save_obj(tag_dict, config.get('embeddings','tag_dict_file'))
 functions.save_obj(extra_embeddings, config.get('embeddings','extra_embeddings_file'))
 
-## POS-tag model (feature extraction (encoder) + classification (decoder))
+## POS-tag model (feature extraction (encode) + classification (decode))
+sequence_len = config.getint('model','sequence_len')
 
 # Encode conllu-formatted data into embeddings
 [X_train, y_train] = functions.word2vec_data_encoding(data_train, word2vec_model, sequence_len, embedding_dim,

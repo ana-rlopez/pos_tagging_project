@@ -32,7 +32,7 @@ Accuracy was the metric used for evaluation. The results obtained in the experim
 
 ```bash
 Test set evaluation:
-accuracy: 0.9310929179191589
+accuracy: 0.9314010739326477
 ```
 
 ### 2. Usage
