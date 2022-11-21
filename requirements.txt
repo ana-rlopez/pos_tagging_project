@@ -1,4 +1,4 @@
 Keras==2.4.2
 pyconll==2.2.1
-tensorflow==2.5.2
+tensorflow==2.9.3
 
